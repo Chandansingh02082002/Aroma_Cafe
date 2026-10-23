@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #f3eee5;
+  --paper: #e9e0d3;
+  --espresso: #17110d;
+  --coffee: #6d4832;
+  --caramel: #b8895f;
+  --muted: #75685d;
+  --line: rgba(23, 17, 13, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--cream);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--cream);
+  color: var(--espresso);
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: var(--caramel);
+  color: var(--espresso);
+}
+
+/* Lenis / GSAP style smoothness helpers */
+
+[data-cursor] {
+  cursor: none;
+}
+
+.page-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal {
+  clip-path: inset(0 0 100% 0);
+}
+
+.reveal-image {
+  transform: scale(1.15);
+}
+
+/* Hide scrollbar while preserving scrolling */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+@keyframes aroma-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-aroma-marquee {
+  animation: aroma-marquee 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-aroma-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-aroma-marquee {
+    animation: none;
+  }
+}
